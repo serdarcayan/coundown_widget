@@ -1,0 +1,59 @@
+# ======================
+# Python
+# ======================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.env/
+.envrc/
+
+# ======================
+# PyQt / Qt
+# ======================
+*.ui
+*.qrc
+*.qmlc
+*.qm
+
+# ======================
+# Logs & runtime
+# ======================
+*.log
+logs/
+*.pid
+
+# ======================
+# OS / Desktop
+# ======================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Linux
+*.swp
+*.swo
+*~
+.nfs*
+
+# ======================
+# IDE / Editor
+# ======================
+.vscode/
+.idea/
+*.iml
+
+# ======================
+# Build / dist
+# ======================
+build/
+dist/
+*.spec
+
+# ======================
+# Autostart (local)
+# ======================
+*.desktop
