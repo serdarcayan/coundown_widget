@@ -10,23 +10,25 @@ class DesktopWidget(QWidget):
         self.setWindowFlags(
             Qt.FramelessWindowHint  # çerçevesiz
             | Qt.Tool  # taskbar / alt-tab yok
+            | Qt.WindowStaysOnTopHint  # opsiyonel: her zaman üstte
             | Qt.WindowDoesNotAcceptFocus  # focus alma
         )
 
         self.setAttribute(Qt.WA_TranslucentBackground)
-        self.setGeometry((1920 - 220 - 40), 40, 500, 300)
+        self.setGeometry(1920 - 240 - 40, 40, 240, 80)  # sağ üst köşe
 
         # İçerik
         self.label = QLabel(text, self)
         self.label.setStyleSheet(
             """
             QLabel {
-                background: rgba(200, 200, 230, 50);
-                color: white;
+                background: rgba(50, 50, 50, 180);  /* yarı şeffaf koyu arka plan */
+                color: #ffffff;
                 font-size: 16px;
-                padding: 12px;
-                border-radius: 12px;
+                font-weight: bold;
+                padding: 14px;
+                border-radius: 15px;  /* yuvarlatılmış köşeler */
             }
-        """
+            """
         )
         self.label.adjustSize()

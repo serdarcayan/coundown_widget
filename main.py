@@ -4,9 +4,8 @@ from PyQt5.QtCore import QTimer
 from widget.ui import DesktopWidget
 from widget.fetcher import Scraper
 
-# Site ve XPath
-URL = "https://www.osym.gov.tr/TR,8797/takvim.html"
-XPATH = "/html/body/form/div[3]/div/div[2]/div/div[31]/div[3]"
+URL = "https://example.com"
+XPATH = '//*[@id="price"]'
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
@@ -20,9 +19,12 @@ if __name__ == "__main__":
         widget.label.setText(data)
         widget.label.adjustSize()
 
-    update()  # açılışta hemen veri çek
+    # İlk veri çekme
+    update()
+
+    # 60 saniye aralıklarla güncelle
     timer = QTimer()
     timer.timeout.connect(update)
-    timer.start(60000)  # 60 saniye
+    timer.start(60_000)  # 60.000 ms = 60 saniye
 
     sys.exit(app.exec_())
